@@ -6,11 +6,14 @@ input.onButtonPressed(Button.AB, function () {
     Schritte = 0
     music.playSoundEffect(music.builtinSoundEffect(soundExpression.giggle), SoundExpressionPlayMode.InBackground)
     basic.showString("0")
+    basic.pause(1000)
+    basic.clearScreen()
 })
 input.onButtonPressed(Button.B, function () {
     basic.showString("" + 0.3 * Schritte + "m")
 })
 input.onGesture(Gesture.ThreeG, function () {
+    led.toggle(2, 2)
     Schritte += 1
     if (Schritte % 100 == 0) {
         music.playSoundEffect(music.builtinSoundEffect(soundExpression.giggle), SoundExpressionPlayMode.InBackground)
